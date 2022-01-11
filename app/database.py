@@ -8,7 +8,13 @@ from .config import settings
 
 
 # SQLALCHEMY_DATABASE_URL = 'mysql://root:santosh&123@localhost/fastapi'
-SQLALCHEMY_DATABASE_URL = f"""mysql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}"""
+# SQLALCHEMY_DATABASE_URL = f"""mysql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}"""
+# SQLALCHEMY_DATABASE_URL = f"""postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}"""
+# SQLALCHEMY_DATABASE_URL = {settings.DATABASE_URL}
+SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
+
+
+
 # mysql://root:santosh&123@localhost:5432/root
 
 # print("sql alchemy database url",SQLALCHEMY_DATABASE_URL)
