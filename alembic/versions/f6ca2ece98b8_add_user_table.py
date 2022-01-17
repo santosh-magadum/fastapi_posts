@@ -23,7 +23,8 @@ def upgrade():
      sa.Column('id',sa.Integer(),primary_key=True,nullable=False),
     sa.Column('email',sa.String(200),nullable=False,unique=True),
     sa.Column('password',sa.String(500),nullable=False),
-    sa.Column('created_at',sa.TIMESTAMP(timezone=True),nullable=False),
+    sa.Column('created_at',sa.TIMESTAMP(timezone=True),nullable=False,server_default=sa.text('NOW()')),
+    
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email')
 
